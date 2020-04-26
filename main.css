@@ -1,0 +1,291 @@
+.potwierdzenie_rezerwacji {
+    position: fixed;
+    background-color: grey;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0 0 0 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 1 vw;
+    height: 1 vh;
+    opacity: 0.9;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 2;
+    border: 3px solid black;   
+}
+.tresc_potwierdzenie {
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 300px;
+}
+
+.content_container {
+    display: grid;
+    grid-template-rows: 150px auto;
+    grid-template-columns: 200px 5fr 1fr;
+    grid-row-gap: 0;
+    grid-column-gap: 15px;
+    grid-template-areas: 
+        "header header header"
+        "nav flights delays"
+        "nav flights reservation"
+        "footer footer footer";
+}
+
+header {
+    color: black;
+    font-family: sans-serif;
+    font-size: 30px;
+    text-align: center;
+    grid-area: header;
+}
+
+.menu {
+    grid-area: nav;
+}
+
+#opoznienia {
+    grid-area: delays;
+    table-layout: fixed;
+    justify-self: stretch;
+    word-break: break-all;
+}
+
+#loty {
+    grid-area: flights;
+    table-layout: fixed ;
+    word-break: break-all;
+}
+
+#reservation_form {
+    grid-area: reservation;
+    margin-top: 30px;
+}
+
+footer {
+    background-color: pink;
+    color: blueviolet;
+    font-family: sans-serif;
+    font-size: 10px;
+    text-align: right;
+    width: 100%;
+    grid-area: footer;
+}
+
+
+#logo {
+    display: inline-block;
+    position: relative;
+    width: 20%;
+    margin-bottom: -45px;
+}
+
+#trzeci {
+    background-color: slategray;
+    visibility: hidden;
+    width: 70px;
+    position: relative;
+    left: 600px;
+    top: 82px;
+}
+
+table {
+    background-color: floralwhite;
+    color: tomato;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 90;
+    text-align: center;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    width: 100%;
+}
+
+.naglowek_tabeli {
+    border-bottom: 1px solid black;
+    /*margin-left: 400px;*/
+}
+
+.zdjecie {
+    display: inline-block;
+    position: relative;
+    width: 15%;
+    height: 25%;
+    margin-left: 10px;
+}
+
+.prognoza {
+    font-style: italic;
+}
+
+button {
+    border: 2px solid black;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    width: 40%;
+}
+
+body {
+    /*max-width: 1960px;*/
+    background-color: beige;
+    text-align: left;
+    /*display: inline-block;*/
+    /*margin-left: 23px;*/
+}
+
+#tytul_nawigacji {
+    font-size: 25px;
+    font-family: sans-sefir;
+    font-weight: normal;
+    /*margin: 4px 4px;*/
+}
+.lista_sekcji {
+    margin-left: 10px;
+    padding-left: 10px;
+    list-style: none;
+}
+.lista_podstron {
+    margin-left: 20px;
+    padding-left: 20px;
+    list-style: none;
+    font-family: Arial;
+}
+
+#logo_potwierdzenie {
+    visibility: hidden;
+}
+nav :link{
+    text-transform: uppercase;
+}
+:link, :visited {
+    text-decoration: inherit;
+    color: rebeccapurple;
+}
+
+.miejsce {
+    visibility: hidden;
+}
+.hoverable:hover .miejsce {
+    visibility: visible;
+    text-align: center;
+    border-radius: 2px;
+    padding: 1px 1px;
+    margin: 0px 2px;
+    background-color: black;
+    color: white;
+    position: absolute;
+}
+.lista_pasazerow li:nth-child(even){
+    background-color: rgb(106, 107, 34);
+    width: 150px;
+}
+
+
+.tytul_sekcji {
+    margin: 4px 4px;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.odwolany {
+    background-color: red;
+    color: black;
+    font-weight: bold;
+}
+.lekko_opozniony {
+    background-color: yellow;
+    color: black;
+}
+.bardzo_opozniony {
+    background-color: orange;
+    color: black;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .content_container {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto auto;
+        grid-row-gap: 0;
+        grid-column-gap: 15px;
+        grid-template-areas: 
+            "header header"    
+            "nav nav"
+            "flights delays"
+            "flights reservation";
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    .menu {
+        grid-area: nav;
+    }
+
+    #opoznienia {
+        grid-area: delays;
+    }
+
+    #flights {
+        grid-area: flights;
+    }
+
+    #reservation_form {
+        display: flex;
+        grid-area: reservation;
+        /*margin-top: 30px;*/
+    }
+
+    footer {
+        grid-area: footer;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .content_container {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-row-gap: 0;
+        grid-column-gap: 15px;
+        grid-template-areas: 
+            "header"    
+            "nav"
+            "flights"
+            "delays"
+            "reservation"
+            "footer";
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    .menu {
+        grid-area: nav;
+    }
+
+    #opoznienia {
+        grid-area: delays;
+    }
+
+    #flights {
+        grid-area: flights;
+    }
+
+    #reservation_form {
+        grid-area: reservation;
+        margin-top: 30px;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+}

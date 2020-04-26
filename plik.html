@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Lista lotow</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+
+<body>
+
+    <section class="content_container">
+
+        <header>Jest to lista lotow
+            <img id="logo" src="logo.png" alt="logo firmy">
+        </header>
+
+        <nav class="menu">
+            <h1 id="tytul_nawigacji">Sekcje: </h1>
+            <ul class="lista_sekcji">
+    
+            
+                    <li> Oferta
+                        <ul class="oferta lista_podstron">
+                        <li><a href="oferta/prywatne.html">detaliczna</a><br>
+                        <li><a href="oferta/biznes.html">biznesowa</a>
+                        </ul>
+                    </li>
+               
+                
+                    <li> Zasady
+                    <ul class="zasady lista_podstron">
+                        <li><a href="zasady/reklamacje.html">reklamacji</a><br>
+                        <li><a href="zasady/zwroty.html">zwrotów</a>
+                    </ul>
+                </li>
+
+                    <li> Pozostałe
+                    <ul class="pozostale lista_podstron">
+                        <li><a href="konto.html">Konto pasażera</a><br>
+                        <li><a href="wyszukiwarka.html">Wyszukaj lot</a><br>
+                        <li><a id="korona_link" href="https://www.gov.pl/web/zdrowie/co-musisz-wiedziec-o-koronawirusie">Aktualności
+                                związane
+                                z Koronawirusem</a><br>
+                        <li><a href="rekrutacja.html">Zostań pracownikiem naszych linii</a><br>
+                        <li><a href="#contact_info">Kontakt do twórcy strony</a><br>
+                    </ul>
+                </li>
+                
+            </ul>
+        </nav>
+
+        <table id="opoznienia">
+            <thead>
+            <tr class="naglowek_tabeli" data-priorytet="a">
+                <th>Odlot</th>
+                <th>Przylot</th>
+                <th>Data</th>
+                <th>Opóźnienie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odwolany" data-priorytet="k">
+                <td>Warszawa</td>
+                <td>Londyn</td>
+                <td>25.03</td>
+                <td>odwołany</td>
+            </tr>
+            <tr class="lekko_opozniony" data-priorytet="z">
+                <td>Londyn</td>
+                <td>Paryż</td>
+                <td>25.03</td>
+                <td>3h</td>
+            </tr>
+            <tr class="lekko_opozniony" data-priorytet="j">
+                <td>Paryż</td>
+                <td>Barcelona</td>
+                <td>25.03</td>
+                <td>6h</td>
+            </tr>
+            <tr class="odwolany" data-priorytet="h">
+                <td>Barcelona</td>
+                <td>Madryt</td>
+                <td>25.03</td>
+                <td>odwołany</td>
+            </tr>
+            <tr class="bardzo_opozniony" data-priorytet="f">
+                <td>Madryt</td>
+                <td>Miami</td>
+                <td>25.03</td>
+                <td>24h</td>
+            </tr>
+            <tr class="bardzo_opozniony" data-priorytet="d">
+                <td>Miami</td>
+                <td>San Francisco</td>
+                <td>25.03</td>
+                <td>48h</td>
+            </tr>
+            <tr class="bardzo_opozniony" data-priorytet="g">
+                <td>San Francisco</td>
+                <td>Kyoto</td>
+                <td>25.03</td>
+                <td>72h</td>
+            </tr>
+            <tr class="lekko_opozniony" data-priorytet="c">
+                <td>Kyoto</td>
+                <td>New Dehli</td>
+                <td>25.03</td>
+                <td>1.5h</td>
+            </tr>
+
+            <tr class="lekko_opozniony" data-priorytet="b">
+                <td>New Dehli</td>
+                <td>Erywań</td>
+                <td>25.03</td>
+                <td>1.5h</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div id="loty">
+            <p id="trzeci">Ale super lot!</p>
+
+            <table class="loty">
+                <tr class="naglowek_tabeli">
+                    <th>nr
+                    <th>skad
+                    <th>dokad
+                    <th>godzina
+                    <th>link</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>wwa</td>
+                    <td>krk</td>
+                    <td>10:00</td>
+                    <td><a href="https://www.google.com">szczegóły</a> </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>gdn</td>
+                    <td>wro</td>
+                    <td>12:00</td>
+                    <td><a href="gdn_wrc.html">szczegóły</a> </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>wwa</td>
+                    <td>scz</td>
+                    <td>10:00</td>
+                    <td><a href="https://www.google.com">szczegóły</a> </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td name="from">wwa</td>
+                    <td>zako</td>
+                    <td>10:00</td>
+                    <td><a href="https://www.google.com">szczegóły</a> </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>wwa</td>
+                    <td>poz</td>
+                    <td>10:00</td>
+                    <td><a href="https://www.google.com">szczegóły</a> </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>wwa</td>
+                    <td>wro</td>
+                    <td>10:00</td>
+                    <td><a href="https://www.google.com">szczegóły</a> </td>
+                </tr>
+            </table>
+        </div>
+
+        <form action="">
+            <ul id="reservation_form">
+                <li>Skąd: <input type="text" name="skad" id="skad"></li>
+                <li>Dokąd: <input type="text" name="dokad" id="dokad"></li>
+                <li>Imie: <input type="text" name="imie" id="imie"></li>
+                <li>Nazwisko: <input type="text" name="nazwisko" id="nazwisko"></li>
+                <li>Data:<input type="date" id="data_lotu" name="data_lotu" value="2020-04-25" min="2020-03-23" max="2020-12-31"></li>
+                <li class="button"><button type="reset" id="reset_button">Zresetuj</button></li>
+                <li class="button"><button type='input' id="submit_button" disabled="true">Zarezerwuj</button></li>
+            </ul>
+        </form>
+
+        <footer id="contact_info">Autor: Krzysztof Sota john.smith@gmail.com</footer>
+
+    </section>
+
+<script src='main.js'></script>
+</body>
+
+</html>
