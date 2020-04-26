@@ -1,3 +1,49 @@
+// ROZWIAZANIE LABU 6,7
+(function() {
+    let submit_button = document.getElementById("submit_button")
+
+    let from_el = (<HTMLInputElement>document.getElementById("skad"))
+    let to_el = (<HTMLInputElement>document.getElementById("dokad"))
+    let name_el = (<HTMLInputElement>document.getElementById("imie"))
+    let surname_el = (<HTMLInputElement>document.getElementById("nazwisko"))
+    let date_el = (<HTMLInputElement>document.getElementById("data_lotu"))
+
+    from_el.addEventListener('input', field_edited)
+    surname_el.addEventListener('input', field_edited)
+    name_el.addEventListener('input', field_edited)
+    to_el.addEventListener('input', field_edited)
+    date_el.addEventListener('input', field_edited)
+
+    function field_edited(ev: MouseEvent) {
+        if(from_el.value !== "" 
+            && to_el.value !== ""
+            && name_el.value !== ""
+            && surname_el.value !== ""
+            && date_el.valueAsNumber > Date.now()) {
+                submit_button.removeAttribute("disabled");
+        }
+    }
+
+    submit_button.addEventListener("click", (ev: InputEvent) => {
+        ev.preventDefault();
+        let el = document.createElement("div") as HTMLDivElement;
+        el.setAttribute('class', 'potwierdzenie_rezerwacji');
+        el.innerHTML =
+          "<p>" +
+          name_el.value +
+          " " +
+          surname_el.value +
+          ": rezerwacja dokonana na dzień " +
+          date_el.valueAsDate +
+          "</p>";
+          document.querySelector("body").appendChild(el);
+      });
+
+})()
+
+// ----------------------------------------------------------------------
+
+
 type Pilot = string;
 interface ILotnisko {
     [nazwa: string]: [string, number[]];
@@ -174,50 +220,7 @@ var f = fib();
 function wywolywacz_fib(ev: MouseEvent) {
     console.log(f());
 }
-// -----------------------------------------------------------------------
-(function() {
-    let submit_button = document.getElementById("submit_button")
 
-    let from_el = (<HTMLInputElement>document.getElementById("skad"))
-    let to_el = (<HTMLInputElement>document.getElementById("dokad"))
-    let name_el = (<HTMLInputElement>document.getElementById("imie"))
-    let surname_el = (<HTMLInputElement>document.getElementById("nazwisko"))
-    let date_el = (<HTMLInputElement>document.getElementById("data_lotu"))
-
-    from_el.addEventListener('input', field_edited)
-    surname_el.addEventListener('input', field_edited)
-    name_el.addEventListener('input', field_edited)
-    to_el.addEventListener('input', field_edited)
-    date_el.addEventListener('input', field_edited)
-
-    function field_edited(ev: MouseEvent) {
-        if(from_el.value !== "" 
-            && to_el.value !== ""
-            && name_el.value !== ""
-            && surname_el.value !== ""
-            && date_el.valueAsNumber > Date.now()) {
-                submit_button.removeAttribute("disabled");
-        } /* else {
-            submit_button.setAttribute("disabled", "yes")
-        } */
-    }
-
-    submit_button.addEventListener("click", (ev: InputEvent) => {
-        ev.preventDefault();
-        let el = document.createElement("div") as HTMLDivElement;
-        el.setAttribute('class', 'potwierdzenie_rezerwacji');
-        el.innerHTML =
-          "<p>" +
-          name_el.value +
-          " " +
-          surname_el.value +
-          ": rezerwacja dokonana na dzień " +
-          date_el.valueAsDate +
-          "</p>";
-          document.querySelector("body").appendChild(el);
-      });
-
-})()
 
 
 
