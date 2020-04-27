@@ -10,8 +10,9 @@ describe('reservation form test', function () {
 
     this.beforeAll(async function() {
         driver = new Builder().forBrowser("firefox").build();
-        this.timeout(20000);
-        await driver.get('file:///home/krzubuntu/Documents/www/nowy_projekt/plik.html');
+        this.timeout(50000);
+        const filePath = `file://${process.cwd()}/plik.html`;
+        await driver.get(filePath);
     })
 
     this.afterAll(async function() {
