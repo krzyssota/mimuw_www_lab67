@@ -1,48 +1,47 @@
 // ROZWIAZANIE LABU 6,7
-(function() {
-    let submit_button = document.getElementById("submit_button")
+(() => {
+    const submit_button = document.getElementById("submit_button")
 
-    let from_el = (<HTMLInputElement>document.getElementById("skad"))
-    let to_el = (<HTMLInputElement>document.getElementById("dokad"))
-    let name_el = (<HTMLInputElement>document.getElementById("imie"))
-    let surname_el = (<HTMLInputElement>document.getElementById("nazwisko"))
-    let date_el = (<HTMLInputElement>document.getElementById("data_lotu"))
+    const from_el = document.getElementById("skad") as HTMLInputElement
+    const to_el = document.getElementById("dokad") as HTMLInputElement
+    const name_el = document.getElementById("imie") as HTMLInputElement
+    const surname_el = document.getElementById("nazwisko") as HTMLInputElement
+    const date_el = document.getElementById("data_lotu") as HTMLInputElement
 
-    from_el.addEventListener('input', field_edited)
-    surname_el.addEventListener('input', field_edited)
-    name_el.addEventListener('input', field_edited)
-    to_el.addEventListener('input', field_edited)
-    date_el.addEventListener('input', field_edited)
+    document.querySelector(".content_container > form:nth-child(5)").addEventListener('input', (ev: InputEvent) => {
+        const todays_date = new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDate());
+        const input_date = new Date(date_el.value);
 
-    function field_edited(ev: MouseEvent) {
-        if(from_el.value !== "" 
+        if(from_el.value !== ""
             && to_el.value !== ""
             && name_el.value !== ""
             && surname_el.value !== ""
-            && date_el.valueAsNumber > Date.now()) {
-                submit_button.removeAttribute("disabled");
-        }
-    }
+            && input_date >= todays_date) {
 
-    submit_button.addEventListener("click", (ev: InputEvent) => {
+            submit_button.removeAttribute("disabled")
+        }
+        else {
+            submit_button.setAttribute("disabled", "true")
+        }
+    })
+
+    submit_button.addEventListener("click", (ev: MouseEvent) => {
         ev.preventDefault();
-        let el = document.createElement("div") as HTMLDivElement;
-        el.setAttribute('class', 'potwierdzenie_rezerwacji');
+        const el = document.getElementById("id_potwierdzenia") as HTMLDivElement;
+        el.setAttribute("style", "visibility:visible");
         el.innerHTML =
-          "<p>" +
           name_el.value +
           " " +
           surname_el.value +
           ": rezerwacja dokonana na dzień " +
-          date_el.valueAsDate +
-          "</p>";
-          document.querySelector("body").appendChild(el);
+          date_el.valueAsDate;
+         // document.querySelector("body").appendChild(el);
       });
 
 })()
 
 // ----------------------------------------------------------------------
-
+/*
 
 type Pilot = string;
 interface ILotnisko {
@@ -165,7 +164,7 @@ function zaloguj(...komunikaty: string[]) {
 zaloguj("Ja", "cię", "nie", "mogę");
 
 
-/* function wait(ms: number) {
+function wait(ms: number) {
     return new Promise((resolve, reject) => {
         window.setTimeout(resolve, ms);
     });
@@ -178,7 +177,7 @@ async function teczoweKolory5(el: HTMLElement) {
         console.log(color);
         el.style.backgroundColor = color;
     }
-} */
+}
 
 
 
@@ -220,7 +219,7 @@ var f = fib();
 function wywolywacz_fib(ev: MouseEvent) {
     console.log(f());
 }
-
+ */
 
 
 
