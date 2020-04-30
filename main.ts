@@ -27,15 +27,15 @@
 
     submit_button.addEventListener("click", (ev: MouseEvent) => {
         ev.preventDefault();
-        const el = document.getElementById("id_potwierdzenia") as HTMLDivElement;
-        el.setAttribute("style", "visibility:visible");
+        const el = document.createElement("div") as HTMLDivElement;
+        el.setAttribute("id", "potwierdzenie_rezerwacji");
         el.innerHTML =
           name_el.value +
           " " +
           surname_el.value +
           ": rezerwacja dokonana na dzień " +
           date_el.valueAsDate;
-         // document.querySelector("body").appendChild(el);
+         document.querySelector("body").appendChild(el);
       });
 
 })()

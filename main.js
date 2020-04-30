@@ -22,15 +22,15 @@
     });
     submit_button.addEventListener("click", function (ev) {
         ev.preventDefault();
-        var el = document.getElementById("id_potwierdzenia");
-        el.setAttribute("style", "visibility:visible");
+        var el = document.createElement("div");
+        el.setAttribute("id", "potwierdzenie_rezerwacji");
         el.innerHTML =
             name_el.value +
                 " " +
                 surname_el.value +
                 ": rezerwacja dokonana na dzień " +
                 date_el.valueAsDate;
-        // document.querySelector("body").appendChild(el);
+        document.querySelector("body").appendChild(el);
     });
 })();
 // ----------------------------------------------------------------------
