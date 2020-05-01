@@ -51,7 +51,7 @@ describe('reservation form test', function () {
         await driver.find('button[id=submit_button]').doClick();
 
         // reservation info correct
-        expect(await driver.find("div[id=\"potwierdzenie_rezerwacji\"]").getAttribute("innerHTML")).
+        expect(await driver.find("div[id=potwierdzenie_rezerwacji]").getAttribute("innerHTML")).
         to.equal(
         (await get_input_by_id("imie")) + " " +
         (await get_input_by_id("nazwisko")) + ": " +
