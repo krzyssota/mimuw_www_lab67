@@ -5,9 +5,10 @@ import { expect } from 'chai';
 import { Builder, driver, ThenableWebDriver } from 'mocha-webdriver';
 import { doesNotMatch } from 'assert';
 // export TS_NODE_COMPILER_OPTIONS='{"lib": ["ES2015"]}';
-// npx mocha -r ts-node/register --timeout 5000 testy_web.ts
+// npx mocha -r ts-node/register --timeout 20000 testy_web.ts
 
 const date_from_the_past = "2020-01-01"
+const date_from_future = "2030-12-22";
 const TIMEOUT = 50000;
 
 
@@ -46,8 +47,7 @@ describe('reservation form test', function () {
     });
 
     it('links not clickable after the reservations were made', async () => {
-        const present_date = new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDate());
-        await fill_form(present_date.toLocaleDateString());
+        await fill_form(date_from_future);
         await driver.find('button[id=submit_button]').doClick();
 
         // reservation info correct
@@ -79,7 +79,7 @@ describe('reservation form test', function () {
 
     async function get_input_by_id(id: string) {
         const arg = 'input[id=' + id + ']';
-        return (await driver.find(arg).getText())
+        return (await driver.find(arg)).value();
     }
 
 })

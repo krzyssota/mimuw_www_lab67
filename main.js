@@ -29,7 +29,7 @@
                 " " +
                 surname_el.value +
                 ": rezerwacja dokonana na dzień " +
-                date_el.valueAsDate;
+                date_el.value;
         document.querySelector("body").appendChild(el);
     });
 })();
